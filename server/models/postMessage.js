@@ -9,12 +9,9 @@ const postSchema = mongoose.Schema({
   likeCount: {
     type: Number,
     default: 0
-  },
-  createdAt: {
-    type: Date,
-    default: new Date()
-  },
-})
+  }},
+  { timestamps: true }
+)
 
 const postMessage = mongoose.model('postMessage', postSchema);
 
