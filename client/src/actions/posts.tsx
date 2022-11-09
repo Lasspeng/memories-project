@@ -11,7 +11,7 @@ export const getPosts = () => async (dispatch: Dispatch) => {
   }
 }
 
-export const createPost = (post) => async (dispatch: Dispatch)  => {
+export const createPost = (post: any) => async (dispatch: Dispatch)  => {
   try {
     const { data } = await api.createPost(post);
 

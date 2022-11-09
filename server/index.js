@@ -13,7 +13,7 @@ app.use(bodyParser.json( {limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded( {limit: '30mb', extended: true }));
 app.use(cors());
 
-// Set route to localhost:4000/posts
+// Set primary route to localhost:4000/posts
 app.use('/posts', postRoutes);
 
 // Connect server to cloud database
@@ -22,7 +22,7 @@ const PORT = process.env.PORT || 4000;
 
 async function connectToDB() {
   try {
-    const server = await mongoose.connect(CONNECTION_URL);
+    const server = await mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true });
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   } catch (err) {
     console.log(err.message);

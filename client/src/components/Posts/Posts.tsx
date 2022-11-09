@@ -9,6 +9,7 @@ function Posts() {
   const classes = makeStyles();
   console.log(posts);
 
+  // Show loading indicator if posts have not yet been retrieved
   if (!posts.length) {
     return ( <CircularProgress /> )
   } else {

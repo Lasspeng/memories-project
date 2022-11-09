@@ -2,7 +2,7 @@ import express from 'express';
 import { getPosts, createPost } from '../controllers/posts.js';
 
 const router = express.Router();
-// Set up basic route
+// Set up basic routes
 router.get('/', getPosts)
 router.post('/', createPost);
 

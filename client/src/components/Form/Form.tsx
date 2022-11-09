@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import makeStyles from './styles';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import FileBase from 'react-file-base64';
@@ -14,16 +14,19 @@ function Form() {
     selectedFile: '',
   })
 
+
   const dispatch = useDispatch();
   const classes = makeStyles();
 
+  // Submit form and send new post to database
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(createPost(postData));
-  }
+    clearForm();
+    }
 
-  const clear = () => {
-
+  const clearForm = () => {
+    setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: ''})
   }
 
   return (
@@ -42,7 +45,7 @@ function Form() {
           />
         </div>
         <Button className={classes.buttonSubmit} variant='contained' color='primary' size='large' type='submit' fullWidth>Submit</Button>
-        <Button variant='contained' color='secondary' size='small' onClick={clear} fullWidth>Clear</Button>
+        <Button variant='contained' color='secondary' size='small' onClick={clearForm} fullWidth>Clear</Button>
 
 
       </form>

@@ -17,9 +17,9 @@ function Post({ post }) {
           title={post.creator}
           subheader={moment(post.createdAt).fromNow()}
         />
-        <Button style={{color: 'black'}} size='small' onClick={() => {}}>
+        {/* <Button style={{color: 'black'}} size='small' onClick={() => {}}>
           <MoreHorizIcon fontSize='medium' />
-        </Button>
+        </Button> */}
       </div>
       {post.selectedFile !== '' && 
         <CardMedia
@@ -35,7 +35,7 @@ function Post({ post }) {
           {post.message}
         </Typography>
       </CardContent>
-      <CardActions disableSpacing className={classes.cardActions}>
+      {/* <CardActions disableSpacing className={classes.cardActions}>
         <Button size='small' color='primary' onClick={() => {}}>
           <ThumbUpAltIcon aria-label='Like' fontSize='small' />
           {post.likeCount}
@@ -43,45 +43,8 @@ function Post({ post }) {
         <Button size='small' color='primary' onClick={() => {}}>
           <DeleteIcon aria-label='delete' fontSize='small' />
         </Button>
-      </CardActions>
+      </CardActions> */}
     </Card>
-    // <Card className={classes.card}>
-    //   <CardMedia className={classes.media} image={post.selectedFile} title={post.title} component='img' />
-    //   <div className={classes.overlay}>
-    //     <Typography variant='h6'>
-    //       {post.creator}
-    //     </Typography>
-    //     <Typography variant='body2'>
-    //       {moment(post.createdAt).fromNow()}
-    //     </Typography>
-    //     <div className={classes.overlay2}>
-    //       <Button style={{color: 'white'}} size='small' onClick={() => {}}>
-    //         <MoreHorizIcon fontSize='medium' />
-    //       </Button>
-    //     </div>
-    //     <div className={classes.details}>
-    //       <Typography variant='body2' color='textSecondary'>
-    //         {post.tags.map((tag: string) => `#${tag} `)}
-    //       </Typography>
-    //     </div>
-    //     <CardContent>
-    //       <Typography className={classes.title} variant='h5' gutterBottom>
-    //         {post.message}
-    //       </Typography>
-    //     </CardContent>
-    //     <CardActions className={classes.cardActions}>
-    //       <Button size='small' color='primary' onClick={() => {}}>
-    //         <ThumbUpAltIcon fontSize='small' />
-    //         Like 
-    //         {post.likeCount}
-    //       </Button>
-    //       <Button size='small' color='primary' onClick={() => {}}>
-    //         <DeleteIcon fontSize='small' />
-    //         Delete
-    //       </Button>
-    //     </CardActions>
-    //   </div>
-    // </Card>
   )
 }
 

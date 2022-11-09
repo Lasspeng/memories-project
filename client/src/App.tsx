@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 
@@ -9,9 +9,11 @@ import { getPosts } from './actions/posts'
 import makeStyles from './styles';
 
 function App() {
+
   const classes = makeStyles();
   const dispatch = useDispatch();
 
+  // Retrieve posts from database and load them onto page
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch])
