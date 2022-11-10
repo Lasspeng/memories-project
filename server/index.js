@@ -17,7 +17,7 @@ app.use(cors());
 app.use('/posts', postRoutes);
 
 // Connect server to cloud database
-const CONNECTION_URL = 'mongodb+srv://GLiburd:ILoveyou2@cluster0.rpufiyr.mongodb.net/?retryWrites=true&w=majority';
+const CONNECTION_URL = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.rpufiyr.mongodb.net/?retryWrites=true&w=majority`;
 const PORT = process.env.PORT || 4000;
 
 async function connectToDB() {
